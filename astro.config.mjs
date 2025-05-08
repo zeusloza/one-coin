@@ -1,10 +1,7 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
-
 import react from "@astrojs/react";
-
 import tailwindcss from "@tailwindcss/vite";
-
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
