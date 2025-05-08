@@ -1,0 +1,76 @@
+{
+  "members": [
+    {
+      "id": "maaw",
+      "name": "Maaw",
+      "photoUrl": "/maaw.jpg",
+      "socialProfiles": [
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/maau1"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/xmaawx"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/xmaawx"
+        }
+      ]
+    },
+    {
+      "id": "puvlo",
+      "name": "Puvlo",
+      "photoUrl": "/puvlo.jpg",
+      "socialProfiles": [
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/puvloo"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/puvlo69"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/puvlo69"
+        }
+      ]
+    },
+    {
+      "id": "late",
+      "name": "Late",
+      "photoUrl": "/late.jpg",
+      "socialProfiles": [
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/latevlogs5175"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/latesitoo"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/late_cod"
+        }
+      ]
+    },
+    {
+      "id": "uriel",
+      "name": "Uriel",
+      "photoUrl": "/uriel.jpg",
+      "socialProfiles": [
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/ratavlogs"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/eluriel2099"
+        }
+      ]
+    }
+  ]
+}

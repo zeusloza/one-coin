@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Experience from "@/components/Experience";
+import TeamProfiles from "@/components/TeamProfiles";
+import RegistrationForm from "@/components/RegistrationForm";
+import YoutubeStats from "@/components/YoutubeStats";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const prerender = true;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="One Coin">
+  <Experience client:only="react" />
+  <section id="intro" class="h-[100vh] relative pointer-events-none">
+    <h1 class="hidden">One Coin</h1>
+  </section>
+  <section id="yt-highlights" class="h-[1000vh] pointer-events-none">
+    <h2 class="hidden">Highlights</h2>
+  </section>
+  <YoutubeStats client:only="react" />
+  <TeamProfiles client:only="react" />
+  <RegistrationForm client:only="react" />
 </Layout>

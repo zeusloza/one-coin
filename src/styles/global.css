@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: icebox-regular;
+    src: url("/fonts/icebox_regular.woff2");
+  }
+  @font-face {
+    font-family: circular-std-book;
+    src: url("/fonts/circular_std_book.woff2");
+  }
+
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+    font-family: "circular-std-book", Arial, Helvetica, sans-serif;
+    color: rgb(243, 245, 247);
+    background-color: black;
+  }
+
+  input {
+    &[type="number"] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+    &[type="date"] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+    }
+    &[type="search"] {
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+    &[type="file"] {
+      &::file-selector-button {
+        display: none;
+      }
+    }
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@theme {
+  --color-fuchsia-50: #fff0fc;
+  --color-fuchsia-100: #ffe3fb;
+  --color-fuchsia-200: #ffc6f7;
+  --color-fuchsia-300: #ff98ef;
+  --color-fuchsia-400: #ff58e1;
+  --color-fuchsia-500: #ff27d0;
+  --color-fuchsia-600: #ff00b2;
+  --color-fuchsia-700: #df0090;
+  --color-fuchsia-800: #b80077;
+  --color-fuchsia-900: #980365;
+  --color-fuchsia-950: #5f0039;
+
+  --color-turquoise-50: #eaffff;
+  --color-turquoise-100: #cbfcff;
+  --color-turquoise-200: #9ef7ff;
+  --color-turquoise-300: #5beeff;
+  --color-turquoise-400: #00d8ff;
+  --color-turquoise-500: #00bde5;
+  --color-turquoise-600: #0096c0;
+  --color-turquoise-700: #03779b;
+  --color-turquoise-800: #0d607d;
+  --color-turquoise-900: #104f69;
+  --color-turquoise-950: #033449;
+
+  --color-yellow-50: #fffbeb;
+  --color-yellow-100: #fff4c6;
+  --color-yellow-200: #ffe688;
+  --color-yellow-300: #ffd348;
+  --color-yellow-400: #ffc020;
+  --color-yellow-500: #f99e07;
+  --color-yellow-600: #dd7602;
+  --color-yellow-700: #b75206;
+  --color-yellow-800: #943e0c;
+  --color-yellow-900: #7a340d;
+  --color-yellow-950: #461a02;
+
+  --color-purple-50: #f5f2ff;
+  --color-purple-100: #ece8ff;
+  --color-purple-200: #dbd4ff;
+  --color-purple-300: #c1b1ff;
+  --color-purple-400: #a484ff;
+  --color-purple-500: #8752ff;
+  --color-purple-600: #792ff8;
+  --color-purple-700: #691be2;
+  --color-purple-800: #5918bf;
+  --color-purple-900: #4a169c;
+  --color-purple-950: #2c0b6a;
+
+  --font-circular: "circular-std-book", Arial, Helvetica, sans-serif;
+  --font-icebox: "icebox-regular", Arial, Helvetica, sans-serif;
+
+  --text-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --text-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+  --text-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+  --text-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+  --text-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+  --text-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+  --text-1xl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+  --text-2xl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+  --text-3xl: clamp(3.81rem, 5.18vi + 2.52rem, 6.66rem);
+  --text-4xl: clamp(4.77rem, 7.48vi + 2.9rem, 8.88rem);
+  --text-5xl: clamp(5.96rem, 10.69vi + 3.29rem, 11.84rem);
+  --text-6xl: clamp(7.45rem, 15.14vi + 3.66rem, 15.78rem);
+  --text-7xl: clamp(9.31rem, 21.31vi + 3.99rem, 21.03rem);
+  --text-8xl: clamp(11.64rem, 29.81vi + 4.19rem, 28.04rem);
+  --text-9xl: clamp(14.55rem, 41.5vi + 4.18rem, 37.38rem);
+
+  --container-30-60: clamp(2.34rem, 4.83vi + 1.14rem, 5rem);
+  --container-35-80: clamp(2.73rem, 7.15vi + 0.95rem, 6.67rem);
+  --container-80-200: clamp(6.25rem, 18.93vi + 1.52rem, 16.66rem);
+}
