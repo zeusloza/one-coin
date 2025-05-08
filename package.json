@@ -32,6 +32,7 @@
     "three": "^0.175.0"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^12.5.2"
+    "@astrojs/cloudflare": "^12.5.2",
+    "wrangler": "^4.14.3"
   }
 }
