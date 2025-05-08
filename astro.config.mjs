@@ -29,7 +29,23 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        "react-dom/server.browser": "react-dom/server",
+      },
+    },
+    ssr: {
+      external: [
+        "@react-three/fiber",
+        "@react-three/drei",
+        "@react-three/rapier",
+        "@react-three/rapier-addons",
+        "three",
+        "gsap",
+        "@gsap/react",
+        "@lottiefiles/react-lottie-player",
+      ],
+    },
   },
-
   adapter: cloudflare(),
 });
