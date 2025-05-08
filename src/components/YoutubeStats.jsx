@@ -9,30 +9,25 @@ function YoutubeStats() {
     videoCount: 0,
     viewCount: 0,
   });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/yt-channel.json");
+    fetch("/api/yt-channel.json")
+      .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error("Error en la respuesta");
         }
-        const data = await response.json();
-        if (
-          data &&
-          data.items &&
-          data.items.length > 0 &&
-          data.items[0].statistics
-        ) {
-          setStats(data.items[0].statistics);
-        } else {
-          console.error("Unexpected data structure received:", data);
-        }
-      } catch (error) {
-        console.error("Failed to fetch YouTube stats:", error);
-      }
-    };
-    fetchData();
+        return response.json();
+      })
+      .then((data) => {
+        setStats(data.items[0].statistics);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, []);
 
   return (

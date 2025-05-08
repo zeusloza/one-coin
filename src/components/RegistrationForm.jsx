@@ -203,7 +203,6 @@ const RegistrationForm = () => {
             required
             autoComplete="off"
             pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:\s+[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)+$"
-            className={`input ${formData.fullName ? "entered" : ""}`}
             label="Nombre completo"
           />
 
@@ -211,7 +210,6 @@ const RegistrationForm = () => {
             <DateOfBirthInput
               value={formData.dateOfBirth}
               onChange={handleChange}
-              className={`input ${formData.dateOfBirth ? "entered" : ""}`}
             />
             <Select
               id="gender"

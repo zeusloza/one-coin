@@ -14,7 +14,7 @@ export default function LocationFields({ value, onChange }) {
     <Select
       id="country"
       name="country"
-      value={value || ""}
+      value={value}
       onChange={onChange}
       required
       label="País de residencia"
