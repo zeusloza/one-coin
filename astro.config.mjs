@@ -31,6 +31,18 @@ export default defineConfig({
         "react-dom/server": "react-dom/server.edge",
       },
     },
+    ssr: {
+      external: [
+        "@react-three/fiber",
+        "@react-three/drei",
+        "@react-three/rapier",
+        "@react-three/rapier-addons",
+        "three",
+        "gsap",
+        "@gsap/react",
+        "@lottiefiles/react-lottie-player",
+      ],
+    },
   },
   adapter: cloudflare(),
 });
