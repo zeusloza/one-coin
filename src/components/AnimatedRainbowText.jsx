@@ -26,11 +26,11 @@ function RainbowText(props) {
         y: 0,
         scrollTrigger: {
           trigger: element,
-          start: "top center",
+          start: "top 85%",
           toggleActions: "play none none reverse",
           markers: false,
         },
-        duration: 0.8,
+        duration: 1.5,
         ease: "power2.out",
       });
     });

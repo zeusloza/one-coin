@@ -4,17 +4,34 @@ import Experience from "@/components/Experience";
 import TeamProfiles from "@/components/TeamProfiles";
 import RegistrationForm from "@/components/RegistrationForm";
 import YoutubeStats from "@/components/YoutubeStats";
+import Highlights from "@/components/Highlights";
 
 export const prerender = true;
 ---
 
 <Layout title="One Coin">
+  <div
+    id="menu"
+    class="absolute left-1/2 top-1.5 -translate-x-1/2 z-50 animate-opacity opacity-0"
+  >
+    <nav class="flex gap-1.5">
+      <a
+        class="p-1 uppercase cursor-pointer bg-yellow-400 text-black rounded-sm"
+        href="#youtube-stats">Contacto</a
+      >
+      <a
+        class="p-1 uppercase cursor-pointer bg-fuchsia-400 text-black rounded-sm"
+        href="#registration-form">Casting</a
+      >
+      <a
+        class="p-1 uppercase cursor-pointer bg-turquoise-400 text-black rounded-sm"
+        href="#team-profiles">Integrantes</a
+      >
+    </nav>
+  </div>
   <Experience client:only="react" />
   <section id="intro" class="h-[100vh] relative pointer-events-none">
     <h1 class="hidden">One Coin</h1>
-  </section>
-  <section id="yt-highlights" class="h-[1000vh] pointer-events-none">
-    <h2 class="hidden">Highlights</h2>
   </section>
   <YoutubeStats client:only="react" />
   <TeamProfiles client:only="react" />

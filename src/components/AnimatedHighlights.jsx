@@ -32,92 +32,41 @@ function AnimatedHighlights({ pausedPhysics, setPausedPhysics }) {
       });
   }, []);
 
-  useGSAP(
-    (context) => {
-      if (!camera || !imagesRef) return;
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#intro",
+        start: "bottom bottom",
+        end: "130% center",
+        scrub: 1,
+        markers: false,
+        onLeave: () => setPausedPhysics(true),
+        onLeaveBack: () => setPausedPhysics(false),
+      },
+    });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#yt-highlights",
-          start: "5% top",
-          end: "bottom top",
-          scrub: 1,
-          markers: false,
-          onEnter: () => setPausedPhysics(true),
-          onLeaveBack: () => setPausedPhysics(false),
-        },
-      });
+    tl.to(
+      camera.position,
+      {
+        x: 0,
+        y: -window.innerHeight / 25,
+        z: 100,
+        onUpdate: () => camera.updateProjectionMatrix(),
+        ease: "power1.inOut",
+      },
+      ">"
+    );
 
-      imagesRef.current.slice(0, 4).forEach((image, i) => {
-        tl.to(
-          camera,
-          {
-            zoom: 250,
-            onUpdate: () => {
-              camera.updateProjectionMatrix();
-            },
-            ease: "power1.inOut",
-          },
-          ">"
-        );
-        if (image) {
-          const position = imagesRef.current[i].translation();
-          const rotation = imagesRef.current[i].rotation();
-
-          tl.to(
-            camera.position,
-            {
-              x: position.x,
-              y: position.y,
-              z: 100,
-              ease: "power1.inOut",
-              onUpdate: () => {
-                camera.updateProjectionMatrix();
-              },
-            },
-            "<"
-          );
-          tl.to(
-            camera.rotation,
-            {
-              x: rotation.x,
-              y: rotation.y,
-              z: rotation.z,
-              ease: "power1.inOut",
-              onUpdate: () => {
-                camera.updateProjectionMatrix();
-              },
-            },
-            "<"
-          );
-        }
-      });
-
-      tl.to(
-        camera.position,
-        {
-          x: 0,
-          y: -window.innerHeight / 25,
-          z: 100,
-          ease: "power1.inOut",
-        },
-        ">"
-      );
-
-      tl.to(
-        camera,
-        {
-          zoom: 50,
-          onUpdate: () => {
-            camera.updateProjectionMatrix();
-          },
-          ease: "power1.inOut",
-        },
-        "<"
-      );
-    },
-    [camera, pausedPhysics, imagesRef]
-  );
+    tl.to(
+      camera,
+      {
+        zoom: 100,
+        onUpdate: () => camera.updateProjectionMatrix(),
+        ease: "power1.inOut",
+      },
+      "<"
+    );
+  }, []);
 
   return (
     <group>
@@ -132,15 +81,6 @@ function AnimatedHighlights({ pausedPhysics, setPausedPhysics }) {
           angularDamping={0.2}
           enabledRotations={[false, false, true]}
           enabledTranslations={[true, true, false]}
-          onClick={() => {
-            if (pausedPhysics) {
-              window.open(
-                `https://www.youtube.com/watch?v=${video.snippet?.resourceId?.videoId}`,
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }
-          }}
         />
       ))}
     </group>

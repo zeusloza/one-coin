@@ -27,8 +27,9 @@ function Scene() {
           start: "top 85%",
           toggleActions: "play none none reverse",
         },
-        duration: 0.8,
-        y: 50,
+        duration: 0.4,
+        y: 100,
+        scale: 0.7,
         opacity: 0,
       });
     });

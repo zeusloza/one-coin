@@ -18,14 +18,19 @@ function TeamProfiles() {
         listElement.scrollWidth > listElement.clientWidth
       ) {
         gsap.to(listElement, {
-          x: () => -(listElement.scrollWidth - listElement.clientWidth) + "px",
           scrollTrigger: {
             trigger: sectionElement,
             start: "top top",
             end: "bottom top",
             markers: false,
             scrub: true,
-            pin: true,
+            onUpdate: (self) => {
+              if (sectionElement) {
+                sectionElement.scrollLeft =
+                  self.progress *
+                  (listElement.scrollWidth - listElement.clientWidth);
+              }
+            },
           },
         });
       }
@@ -37,7 +42,7 @@ function TeamProfiles() {
     <section
       id="team-profiles"
       ref={sectionRef}
-      className="relative max-w-vw flex items-center overflow-hidden py-36"
+      className="relative max-w-vw flex items-center overflow-x-auto py-28 scrollbar-hide"
     >
       <div ref={listRef}>
         <ul className="flex w-full p-4 gap-4 max-w-dvw">
