@@ -67,7 +67,7 @@ function YoutubeStats() {
         alt="sticker coin"
       />
       <RainbowLink
-        href="mailto:onecoinentertainment@gmail.com"
+        href="mailto:negocios@onecoincrew.com"
         rel="noopener noreferrer"
       >
         Contacto comercial
